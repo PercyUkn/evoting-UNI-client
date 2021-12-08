@@ -13,7 +13,7 @@ import {
 } from "./types";
 import setAuthToken from "../utils/setAuthToken";
 
-let endpoint="http://e1-server-blockchain-evoting.herokuapp.com/"
+let endpoint="http://e1-server-blockchain-evoting.herokuapp.com"
 
 export const loadUser = () => async dispatch => {
   if (localStorage.token) {
