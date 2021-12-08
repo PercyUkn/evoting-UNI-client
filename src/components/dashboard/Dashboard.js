@@ -81,10 +81,12 @@ class Dashboard extends Component {
     }
     console.log("Cliente");
     console.log(request);
-    fetch('http://e1-server-blockchain-evoting.herokuapp.com/api/vote',request).then(response => console.log(response)); // Para evitar el voto doble
+    fetch('https://e1-server-blockchain-evoting.herokuapp.com/api/vote',request).then(response => console.log(response)); // Para evitar el voto doble
 
     setTimeout(function() {
-      window.location.replace('http://localhost:3000/hasil');
+      let local = "http://localhost:3000"
+      let remote = "https://e1-client-blockchain-evoting.herokuapp.com"
+      window.location.replace('https://e1-client-blockchain-evoting.herokuapp.com/hasil');
     }, 7000);
   };
 
