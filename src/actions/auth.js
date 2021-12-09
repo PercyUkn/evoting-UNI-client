@@ -16,7 +16,8 @@ if(process.env.NODE_ENV != 'production'){
   require('dotenv').config();
 }
 
-let endpoint=process.env.SERVER_ENDPOINT
+let endpoint='https://e1-server-blockchain-evoting.herokuapp.com'
+console.log(endpoint)
 
 export const loadUser = () => async dispatch => {
   if (localStorage.token) {

@@ -25,8 +25,8 @@ if(process.env.NODE_ENV != 'production'){
   require('dotenv').config();
 }
 
-let endpoint=process.env.SERVER_ENDPOINT
-let client_endpoint=process.env.CLIENT_ENDPOINT
+let endpoint='https://e1-server-blockchain-evoting.herokuapp.com'
+let client_endpoint='https://e1-client-blockchain-evoting.herokuapp.com'
 
 // Un poco de acoplamiento y malas prácticas!!!
 //const DataAktif = require("../../../../models/DataAktif");
