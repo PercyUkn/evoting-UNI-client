@@ -21,6 +21,13 @@ import file_4 from "../../files/plan_4.pdf";
 import file_6 from "../../files/plan_6.pdf";
 import file_7 from "../../files/plan_7.pdf";
 
+if(process.env.NODE_ENV != 'production'){
+  require('dotenv').config();
+}
+
+let endpoint=process.env.SERVER_ENDPOINT
+let client_endpoint=process.env.CLIENT_ENDPOINT
+
 // Un poco de acoplamiento y malas prácticas!!!
 //const DataAktif = require("../../../../models/DataAktif");
 //let userDetails = JSON.parse(localStorage.getItem('user'));
@@ -81,12 +88,14 @@ class Dashboard extends Component {
     }
     console.log("Cliente");
     console.log(request);
-    fetch('https://e1-server-blockchain-evoting.herokuapp.com/api/vote',request).then(response => console.log(response)); // Para evitar el voto doble
+    
+    let api_vote_endpoint = endpoint + '/api/vote'
+
+    fetch(api_vote_endpoint,request).then(response => console.log(response)); // Para evitar el voto doble
 
     setTimeout(function() {
-      let local = "http://localhost:3000"
-      let remote = "https://e1-client-blockchain-evoting.herokuapp.com"
-      window.location.replace('https://e1-client-blockchain-evoting.herokuapp.com/hasil');
+      let main_page = client_endpoint+'/hasil'
+      window.location.replace(main_page);
     }, 7000);
   };
 

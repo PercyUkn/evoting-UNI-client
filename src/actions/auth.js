@@ -12,8 +12,11 @@ import {
   LOGOUT
 } from "./types";
 import setAuthToken from "../utils/setAuthToken";
+if(process.env.NODE_ENV != 'production'){
+  require('dotenv').config();
+}
 
-let endpoint="https://e1-server-blockchain-evoting.herokuapp.com"
+let endpoint=process.env.SERVER_ENDPOINT
 
 export const loadUser = () => async dispatch => {
   if (localStorage.token) {
