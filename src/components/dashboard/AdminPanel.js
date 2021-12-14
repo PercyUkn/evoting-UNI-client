@@ -99,7 +99,7 @@ class AdminPanel extends Component {
         from: "0xB6F966B122a93DBbb1bD7cf2ea3BCB4ED1922c4D"
       });
 
-      fetch('http://localhost:5000/api/vote/reset').then(response => console.log(response))
+      fetch('https://e1-server-blockchain-evoting.herokuapp.com/api/vote/reset').then(response => console.log(response))
 
       this.setState({ resetMsg: "Restablecimiento exitoso" });
 
