@@ -24,7 +24,7 @@ const Activate = ({ activate, isAuthenticated }) => {
       "success"
     );
     setTimeout(function() {
-      window.location.replace('http://localhost:3000/login');
+      window.location.replace('http://e1-client-blockchain-evoting.herokuapp.com/login');
     }, 4000);
   };
 
